@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Next.js output
+.next/
+out/
+
+# Local browser and audit artifacts
+.chrome-shot*/
+.tmp-lighthouse/
+lh-*.json
+lighthouse-*.json
+home-*.png
+*.log
+
+# Environment and editor files
+.env*
+!.env.example
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# TypeScript cache
+*.tsbuildinfo
