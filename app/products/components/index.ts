@@ -1,0 +1,1 @@
+export { ApplicationComingSoon } from "./ApplicationComingSoon";
