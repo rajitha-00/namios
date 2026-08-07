@@ -31,7 +31,9 @@ export const ScrollEffects = () => {
             }
           });
         },
-        { rootMargin: "0px 0px -10%", threshold: 0.08 }
+        // Lower threshold (0.04) = trigger when just 4% is visible — better for tall sections
+        // Smaller negative margin = reveal slightly earlier for a more natural feel
+        { rootMargin: "0px 0px -5%", threshold: 0.04 }
       );
       revealTargets.forEach((target) => observer?.observe(target));
     }

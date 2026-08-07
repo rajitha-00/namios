@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import localFont from "next/font/local";
-import { ScrollEffects, SiteBreadcrumbs, SiteHeader } from "./site";
+import { ScrollEffects, SiteBreadcrumbs, SiteHeader, WhatsAppWidget } from "./site";
 import "./globals.css";
 
 const namiBrandFont = localFont({
@@ -89,6 +89,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
             <span>Researched and engineered in Sri Lanka</span>
           </div>
         </footer>
+        <WhatsAppWidget />
       </body>
     </html>
   );

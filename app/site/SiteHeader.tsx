@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ProductMegaMenu } from "./components";
 import { primaryNavigationItems, productNavigationItems } from "./constants";
 
@@ -13,40 +13,77 @@ export const SiteHeader = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [productMenuOpen, setProductMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
 
-  const closeMenus = () => {
+  // Hover-bridge: timeout ref prevents menu flickering on cursor movement between trigger and panel
+  const closeDropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const closeMenus = useCallback(() => {
     setMenuOpen(false);
     setProductMenuOpen(false);
-  };
+  }, []);
+
+  const openProductMenu = useCallback(() => {
+    if (closeDropdownTimeout.current) {
+      clearTimeout(closeDropdownTimeout.current);
+      closeDropdownTimeout.current = null;
+    }
+    setProductMenuOpen(true);
+  }, []);
+
+  const scheduleCloseProductMenu = useCallback(() => {
+    closeDropdownTimeout.current = setTimeout(() => {
+      setProductMenuOpen(false);
+    }, 90);
+  }, []);
+
   const isActiveRoute = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
+  // Determine if current route has a dark photographic hero section at the top
+  const isDarkHeroPage =
+    ["/", "/products", "/pricing", "/benefits", "/qa", "/about", "/contact", "/offers"].includes(
+      pathname
+    ) || pathname.startsWith("/products/");
+
   useEffect(() => {
-    const updateHeader = () => setScrolled(window.scrollY > 18);
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") closeMenus();
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+      setScrolled(scrollY > 20);
+      const heroThreshold = Math.max(window.innerHeight * 0.6, 400);
+      setPastHero(scrollY > heroThreshold);
     };
-    const handlePointerDown = (event: PointerEvent) => {
-      if (!headerRef.current?.contains(event.target as Node)) closeMenus();
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMenus();
+    };
+    const handlePointerDown = (e: PointerEvent) => {
+      if (!headerRef.current?.contains(e.target as Node)) closeMenus();
     };
 
-    updateHeader();
-    window.addEventListener("scroll", updateHeader, { passive: true });
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("keydown", handleKeyDown);
     document.addEventListener("pointerdown", handlePointerDown);
     return () => {
-      window.removeEventListener("scroll", updateHeader);
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("pointerdown", handlePointerDown);
+      if (closeDropdownTimeout.current) clearTimeout(closeDropdownTimeout.current);
     };
-  }, []);
+  }, [closeMenus]);
 
   return (
-    <header className="topbar platform-topbar" data-scrolled={scrolled} ref={headerRef}>
+    <header
+      className="topbar platform-topbar"
+      data-scrolled={scrolled}
+      data-hero-past={pastHero}
+      data-menu-open={menuOpen}
+      ref={headerRef}
+    >
       <nav className="container nav site-nav platform-nav" aria-label="Main navigation">
         <Link className="brand" href="/" aria-label="NamiOS home" onClick={closeMenus}>
           <span className="brand-symbol">
-            <Image src="/brand/nami-mark.svg" alt="" width={60} height={59} priority />
+            <Image src="/brand/nami-mark.svg" alt="" width={40} height={40} priority />
           </span>
           <span className="brand-word">NamiOS</span>
         </Link>
@@ -65,14 +102,15 @@ export const SiteHeader = () => {
 
         <div id="site-navigation" className="nav-panel" data-open={menuOpen}>
           <div className="navlinks platform-navlinks">
+            {/* Product dropdown with hover-bridge delay */}
             <div
               className="product-nav-switcher"
               data-open={productMenuOpen}
-              onMouseEnter={() => setProductMenuOpen(true)}
-              onMouseLeave={() => setProductMenuOpen(false)}
-              onFocus={() => setProductMenuOpen(true)}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget)) setProductMenuOpen(false);
+              onMouseEnter={openProductMenu}
+              onMouseLeave={scheduleCloseProductMenu}
+              onFocus={openProductMenu}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget)) scheduleCloseProductMenu();
               }}
             >
               <button
@@ -81,14 +119,22 @@ export const SiteHeader = () => {
                 aria-expanded={productMenuOpen}
                 aria-controls="product-mega-menu"
                 onClick={() => {
-                  const mobileNavigation = window.matchMedia("(max-width: 820px)").matches;
-                  setProductMenuOpen((open) => mobileNavigation ? !open : true);
+                  const isMobile = window.matchMedia("(max-width: 820px)").matches;
+                  setProductMenuOpen((open) => (isMobile ? !open : true));
                 }}
               >
                 Products
-                <span aria-hidden="true">⌄</span>
+                {/* Clean indicator dot — no rotation */}
+                <span className="nav-trigger-dot" aria-hidden="true" />
               </button>
-              <div id="product-mega-menu" className="product-mega-positioner" data-open={productMenuOpen}>
+              {/* The positioner also listens for hover to prevent closing when cursor moves into the panel */}
+              <div
+                id="product-mega-menu"
+                className="product-mega-positioner"
+                data-open={productMenuOpen}
+                onMouseEnter={openProductMenu}
+                onMouseLeave={scheduleCloseProductMenu}
+              >
                 <ProductMegaMenu
                   activePath={pathname}
                   items={productNavigationItems}

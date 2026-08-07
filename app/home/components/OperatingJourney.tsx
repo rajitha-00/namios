@@ -31,7 +31,7 @@ const journeySteps = [
 ] as const;
 
 export const OperatingJourney = () => {
-  const [activeStep, setActiveStep] = useState(1);
+  const [activeStep, setActiveStep] = useState(0);
   const step = journeySteps[activeStep];
 
   return (
@@ -61,7 +61,8 @@ export const OperatingJourney = () => {
               </button>
             ))}
           </div>
-          <div className={`journey-diagram ${step.visual}`}>
+          {/* Added key={activeStep} to diagram and caption to trigger CSS animation on step changes */}
+          <div className={`journey-diagram ${step.visual}`} key={`diagram-${activeStep}`}>
             <div className="journey-node source"><span>Property</span></div>
             <div className="journey-path" aria-hidden="true"><i /><i /><i /></div>
             <div className="journey-core">
@@ -71,7 +72,7 @@ export const OperatingJourney = () => {
             <div className="journey-path reverse" aria-hidden="true"><i /><i /><i /></div>
             <div className="journey-node outcome"><span>Guest ready</span></div>
           </div>
-          <div className="journey-caption">
+          <div className="journey-caption" key={`caption-${activeStep}`}>
             <h3>{step.title}</h3>
             <p>{step.body}</p>
             <span>{step.note}</span>
