@@ -4,25 +4,101 @@ import { BenefitsGrid, CtaBand, FeatureMosaic, PricingCards, ProductGrid, QaList
 import { AudienceRail, BeforeAfterExperience, IntegrationLandscape, OperatingJourney, PropertyHeroMedia } from "./home/components";
 
 export const metadata: Metadata = {
-  title: "NamiOS | The modern Hotel OS for Sri Lankan properties",
+  title: "Hotel Management Software Sri Lanka — PMS, POS & Direct Bookings | NamiOS",
   description:
-    "Replace paper guest books, manual Tourist Police reporting, unpaid room holds, OTA commission leakage, and fragmented hotel workflows with NamiOS."
+    "NamiOS is Sri Lanka's #1 hotel management software. PMS, restaurant POS, Tourist Police sync, trilingual UI (Sinhala, Tamil, English), deposit locks, and 0% commission direct bookings. Start free for 1 month from LKR 6,999.",
+  keywords: [
+    "hotel management software Sri Lanka",
+    "best hotel PMS Sri Lanka",
+    "hotel software for small hotels Sri Lanka",
+    "boutique villa management system Sri Lanka",
+    "tourist police sync hotel software",
+    "hotel direct booking engine Sri Lanka",
+    "NamiOS hotel operating system",
+    "hotel front desk software Colombo",
+    "Sri Lankan resort management software",
+    "LKR hotel billing software",
+    "Sinhala Tamil English hotel software",
+    "hotel POS system Sri Lanka",
+    "independent hotel software Sri Lanka",
+    "guesthouse management system Sri Lanka",
+    "OTA import hotel software Sri Lanka"
+  ],
+  alternates: {
+    canonical: "https://namios.io"
+  },
+  openGraph: {
+    title: "Hotel Management Software Sri Lanka — NamiOS",
+    description:
+      "Sri Lanka's leading Hotel OS. PMS, POS, Tourist Police sync, direct bookings, and trilingual UI for independent hotels, villas & resorts. From LKR 6,999/month.",
+    url: "https://namios.io",
+    images: [{ url: "/og/og-home.png", width: 1200, height: 630, alt: "NamiOS Hotel Management Software Sri Lanka" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hotel Management Software Sri Lanka — NamiOS",
+    description: "PMS, POS, Tourist Police sync, and trilingual hotel OS for Sri Lanka. Start free for 1 month.",
+    images: ["/og/og-home.png"]
+  }
 };
 
 export default function HomePage() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "NamiOS",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description:
-      "Hotel operating platform for PMS, POS, direct booking, invoicing, guest operations, and Sri Lanka-ready compliance workflows.",
-    offers: {
-      "@type": "AggregateOffer",
-      lowPrice: "9900",
-      priceCurrency: "LKR"
-    }
+    "@graph": [
+      {
+        "@type": "SoftwareApplication",
+        "@id": "https://namios.io/#software",
+        name: "NamiOS",
+        applicationCategory: "BusinessApplication",
+        applicationSubCategory: "Hotel Management Software",
+        operatingSystem: "Web, iOS, Android",
+        url: "https://namios.io",
+        description:
+          "NamiOS is a cloud-based hotel operating system for independent hotels, boutique villas, guesthouses, resorts, and restaurants in Sri Lanka. Features include PMS, POS, Tourist Police sync, direct booking engine, housekeeping Kanban, RBAC, and trilingual UI in Sinhala, Tamil, and English.",
+        screenshot: "https://namios.io/og/og-home.png",
+        featureList: [
+          "Property Management System (PMS)",
+          "Restaurant Point of Sale (POS)",
+          "Tourist Police Google Sheets sync",
+          "Direct booking engine (0% commission)",
+          "Housekeeping Kanban board",
+          "Deposit lock system",
+          "Trilingual UI — Sinhala, Tamil, English",
+          "Role-based access control (RBAC)",
+          "OTA import from Booking.com and Agoda",
+          "LKR billing with VAT, SSCL, and service charge"
+        ],
+        audience: {
+          "@type": "Audience",
+          audienceType: "Independent hotel owners, boutique villa operators, guesthouse managers, resort operators, restaurant owners in Sri Lanka"
+        },
+        offers: {
+          "@type": "AggregateOffer",
+          lowPrice: "6999",
+          highPrice: "29999",
+          priceCurrency: "LKR",
+          offerCount: 4,
+          offers: [
+            { "@type": "Offer", name: "Launch", price: "6999", priceCurrency: "LKR" },
+            { "@type": "Offer", name: "Standard", price: "9900", priceCurrency: "LKR" },
+            { "@type": "Offer", name: "Standard + AI", price: "17999", priceCurrency: "LKR" },
+            { "@type": "Offer", name: "Pro", price: "29999", priceCurrency: "LKR" }
+          ]
+        },
+        provider: { "@id": "https://namios.io/#organization" },
+        inLanguage: ["en", "si", "ta"],
+        availableLanguage: [
+          { "@type": "Language", name: "English" },
+          { "@type": "Language", name: "Sinhala" },
+          { "@type": "Language", name: "Tamil" }
+        ],
+        areaServed: {
+          "@type": "Country",
+          name: "Sri Lanka"
+        }
+      }
+    ]
   };
 
   return (

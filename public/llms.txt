@@ -1,0 +1,93 @@
+# NamiOS
+
+> NamiOS is a modern hotel operating system (Hotel OS) designed specifically for independent hotels, boutique villas, guesthouses, resorts, and restaurants in Sri Lanka.
+
+NamiOS is built and powered by DesignNetrix, a Sri Lankan technology company.
+
+## What is NamiOS?
+
+NamiOS is a cloud-based hospitality management platform that replaces fragmented hotel workflows with one connected operating system. It combines:
+
+- **Property Management System (PMS)** — bookings, rooms, guests, availability, and reservation management
+- **Point of Sale (POS)** — dining, beverages, and restaurant billing (Nami Dine)
+- **Direct Booking Engine** — 0% commission direct bookings for hotels
+- **Housekeeping Management** — live Kanban board for room readiness, cleaning task assignments
+- **Tourist Police Sync** — automatic guest check-in data export to Google Sheets for Sri Lankan Tourist Police compliance
+- **Deposit Lock System** — prevents fake bookings by requiring verified payment deposits
+- **Multilingual Interface** — full UI in Sinhala, Tamil, and English (trilingual)
+- **RBAC Security** — role-based access control for different staff roles (front desk, housekeeping, management, owner)
+- **OTA Import** — Booking.com and Agoda reservation import workflows
+- **LKR Billing** — Sri Lankan Rupee invoicing with VAT, SSCL, and service charge configuration
+
+## Who is NamiOS for?
+
+- Independent hotels in Sri Lanka
+- Boutique villas and guesthouses in Sri Lanka
+- Beach and hill country resorts
+- Restaurants and food & beverage operations
+- Hotel groups and multi-property operators
+
+## Key Facts
+
+- Starting price: LKR 6,999/month (Launch plan)
+- Free trial: 1 full month, no upfront payment
+- Commission on direct bookings: 0% (zero)
+- OTA dependence reduction: direct booking channel included with annual plans
+- Languages: Sinhala, Tamil, English
+- Built for: Sri Lanka hospitality regulatory compliance (Tourist Police reporting)
+- Developer: DesignNetrix, Colombo, Sri Lanka
+
+## Products
+
+- **Nami Stay** — core hotel operations (available now)
+- **Nami Dine** — restaurant and F&B management (coming soon)
+- **Nami Pay** — integrated payments (coming soon)
+- **Nami People** — HR and staff management (coming soon)
+- **Nami Control** — multi-property and owner dashboard (coming soon)
+
+## Pricing Plans
+
+| Plan | Price (LKR/month) | Key Inclusions |
+|------|------------------|----------------|
+| Launch | 6,999 | Core PMS — bookings, rooms, guests, housekeeping, invoicing |
+| Standard | 9,900 | Launch + deposit locks, OTA imports, compliance exports |
+| Standard + AI | 17,999 | Standard + Nami AI operating assistant |
+| Pro | 29,999 | All products — Stay, Dine, Pay, People, HR, payroll |
+
+All plans include a 1-month free trial. Annual billing gets 10% off + free direct-booking website.
+
+## Frequently Asked Questions
+
+**Does NamiOS work for small villas?**
+Yes. A small property can begin with the Launch plan and add capabilities as the business grows. NamiOS is designed specifically for independent hospitality, not enterprise hotels.
+
+**Does NamiOS integrate with Booking.com and Agoda?**
+NamiOS includes OTA import workflows so reservations from Booking.com and Agoda appear in the same operational view as direct bookings.
+
+**What is Tourist Police sync in NamiOS?**
+Sri Lankan hotels are required to submit guest check-in information to the Tourist Police. NamiOS automatically streams this guest data into a designated Google Sheets spreadsheet, eliminating manual nightly reporting.
+
+**Is NamiOS available in Sinhala?**
+Yes. NamiOS is one of the very few hotel management systems with a full trilingual interface in Sinhala, Tamil, and English — designed for Sri Lankan front desk and housekeeping staff.
+
+**How much does NamiOS cost in LKR?**
+Plans start at LKR 6,999/month for the Launch plan. The most popular Standard plan is LKR 9,900/month. All plans include a 1-month free trial with no upfront payment.
+
+## Contact
+
+- Website: https://namios.io
+- Email: hellonamios@outlook.com
+- Phone: +94 70 714 0146
+- WhatsApp: https://wa.me/94707140146
+- Company: DesignNetrix, Colombo, Sri Lanka
+
+## Key Pages
+
+- Homepage: https://namios.io
+- Products: https://namios.io/products
+- Benefits: https://namios.io/benefits
+- Pricing: https://namios.io/pricing
+- About: https://namios.io/about
+- Contact: https://namios.io/contact
+- Offers & Free Trial: https://namios.io/offers
+- Market Gaps (FAQ): https://namios.io/qa

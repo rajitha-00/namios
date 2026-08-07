@@ -3,8 +3,34 @@ import Link from "next/link";
 import { PageHero } from "../site";
 
 export const metadata: Metadata = {
-  title: "About NamiOS and DesignNetrix",
-  description: "Meet NamiOS, a research-led hospitality operating platform proudly developed and powered by DesignNetrix in Sri Lanka."
+  title: "About NamiOS — Hotel Software Built for Sri Lanka by DesignNetrix",
+  description:
+    "NamiOS is a research-led hotel operating system built by DesignNetrix in Colombo, Sri Lanka — designed for independent hotels, villas, guesthouses, resorts, and restaurants with real Sri Lankan operating requirements.",
+  keywords: [
+    "NamiOS about",
+    "DesignNetrix Sri Lanka",
+    "hotel software company Sri Lanka",
+    "hotel tech startup Sri Lanka",
+    "Sri Lankan hotel management system",
+    "hotel software built in Sri Lanka",
+    "hospitality platform Sri Lanka",
+    "independent hotel software developers Sri Lanka"
+  ],
+  alternates: {
+    canonical: "https://namios.io/about"
+  },
+  openGraph: {
+    title: "About NamiOS — Hotel Software Built in Sri Lanka",
+    description: "A research-led hotel OS built by DesignNetrix, Colombo, Sri Lanka for independent properties.",
+    url: "https://namios.io/about",
+    images: [{ url: "/og/og-home.png", width: 1200, height: 630, alt: "About NamiOS by DesignNetrix" }]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About NamiOS — Hotel Software Built in Sri Lanka",
+    description: "Research-led hotel OS for Sri Lankan independent hotels, villas & resorts. By DesignNetrix, Colombo.",
+    images: ["/og/og-home.png"]
+  }
 };
 
 const principles = [
@@ -14,8 +40,47 @@ const principles = [
   ["Grow without replacement", "A small property can begin with Launch. The same platform can grow into AI, dining, payments, HR, payroll, and multi-operation visibility."]
 ];
 
-const AboutPage = () => (
+const AboutPage = () => {
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "SoftwareCompany"],
+    "@id": "https://namios.io/#localbusiness",
+    name: "NamiOS",
+    image: "https://namios.io/brand/nami-logo.svg",
+    url: "https://namios.io",
+    telephone: "+94-70-714-0146",
+    email: "hellonamios@outlook.com",
+    description:
+      "NamiOS is a hotel management software company based in Colombo, Sri Lanka, offering a cloud hotel operating system for independent hotels, villas, guesthouses, resorts, and restaurants.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Colombo",
+      addressCountry: "LK"
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "Sri Lanka"
+    },
+    openingHoursSpecification: {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:30",
+      closes: "17:30"
+    },
+    priceRange: "LKR 6,999–29,999/month",
+    parentOrganization: {
+      "@type": "Organization",
+      name: "DesignNetrix",
+      url: "https://www.designnetrix.com/"
+    }
+  };
+
+  return (
   <main>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+    />
     <PageHero
       eyebrow="A DesignNetrix product"
       title="Researched in hospitality. Engineered in Sri Lanka."
@@ -79,6 +144,7 @@ const AboutPage = () => (
       </div>
     </section>
   </main>
-);
+  );
+};
 
 export default AboutPage;

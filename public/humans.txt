@@ -1,0 +1,23 @@
+NamiOS — Hotel Operating System for Sri Lanka
+Built with care by DesignNetrix, Sri Lanka.
+
+---
+TEAM
+---
+Product: NamiOS by DesignNetrix
+Website: https://www.designnetrix.com/
+Contact: hellonamios@outlook.com
+Location: Colombo, Sri Lanka
+
+---
+LAST UPDATED
+---
+2026-08
+
+---
+TECH STACK
+---
+Framework: Next.js 16 (App Router)
+Language: TypeScript
+Styling: Vanilla CSS
+Deployment: Vercel / Firebase App Hosting
