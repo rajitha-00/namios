@@ -30,7 +30,13 @@ const PlanShowcase = ({ billingCycle, plan }: { billingCycle: BillingCycle; plan
         <span>/{isAnnual ? "year" : "month"}</span>
       </div>
       <small>{isAnnual ? `Equivalent to ${formatLkr(effectiveMonthly)}/month · 10% off` : "Exact monthly price · billed month to month"}</small>
-      <a href="/offers">Start 1-month free trial <span>{"\u2192"}</span></a>
+      <a href="/offers">
+        Start 1-month free trial
+        <svg className="lucide-arrow" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </svg>
+      </a>
     </article>
   );
 };

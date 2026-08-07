@@ -10,9 +10,18 @@ export const SiteBreadcrumbs = () => {
 
   const segments = pathname.split("/").filter(Boolean);
   const isProductRoot = pathname === "/products";
+  const isPhotographicHero = [
+    "/products",
+    "/pricing",
+    "/benefits",
+    "/qa",
+    "/about",
+    "/contact",
+    "/offers"
+  ].includes(pathname) || pathname.startsWith("/products/");
 
   return (
-    <div className="breadcrumb-shell">
+    <div className={`breadcrumb-shell ${isPhotographicHero ? "hero-breadcrumb-shell" : ""}`}>
       <nav className="container site-breadcrumbs" aria-label="Breadcrumb">
         <Link href="/">Home</Link>
         <span aria-hidden="true">/</span>

@@ -38,8 +38,9 @@ export const comparisonGroups: ComparisonGroup[] = [
       { name: "Bookings, rooms, and guest profiles", values: { launch: true, standard: true, ai: true, pro: true } },
       { name: "Housekeeping and live room status", values: { launch: "Basic", standard: "Full", ai: "Full", pro: "Full" } },
       { name: "Folios and branded invoices", values: { launch: true, standard: true, ai: true, pro: true } },
+      { name: "Role-Based Access Control (RBAC)", values: { launch: "Basic", standard: "Full", ai: "Full", pro: "Full" } },
       { name: "OTA booking imports", values: { launch: false, standard: true, ai: true, pro: true } },
-      { name: "Tourist Police-ready records", values: { launch: false, standard: true, ai: true, pro: true } },
+      { name: "Tourist Police Google Sheet Sync", values: { launch: false, standard: "Real-time", ai: "Real-time", pro: "Real-time" } },
       { name: "Advanced reports and revenue insights", values: { launch: false, standard: true, ai: true, pro: true } }
     ]
   },
@@ -47,8 +48,10 @@ export const comparisonGroups: ComparisonGroup[] = [
     name: "Sales and guest experience",
     features: [
       { name: "Direct-booking engine", values: { launch: false, standard: true, ai: true, pro: true } },
+      { name: "Hybrid WhatsApp Dispatcher", values: { launch: true, standard: true, ai: true, pro: true } },
       { name: "Payment links and deposit automation", values: { launch: false, standard: true, ai: true, pro: true } },
       { name: "Nami Dine restaurant POS", values: { launch: false, standard: false, ai: false, pro: true } },
+      { name: "Front desk hardware leasing", values: { launch: "Optional", standard: "Optional", ai: "Optional", pro: "Included" } },
       { name: "Nami Pay settlement workflows", values: { launch: false, standard: false, ai: false, pro: true } }
     ]
   },
@@ -56,6 +59,7 @@ export const comparisonGroups: ComparisonGroup[] = [
     name: "AI, people, and support",
     features: [
       { name: "Nami AI operating assistant", values: { launch: false, standard: false, ai: true, pro: true } },
+      { name: "AI guest promotion campaigns", values: { launch: false, standard: false, ai: true, pro: true } },
       { name: "AI summaries, forecasts, and suggestions", values: { launch: false, standard: false, ai: true, pro: true } },
       { name: "Nami People HR and attendance", values: { launch: false, standard: false, ai: false, pro: true } },
       { name: "Payroll workflows and payslips", values: { launch: false, standard: false, ai: false, pro: true } },

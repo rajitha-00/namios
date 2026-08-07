@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { CtaBand, FeatureMosaic, ProductGrid, ProductTable, WorkflowStrip } from "../components";
+import { CtaBand, FeatureMosaic, ProductGrid, ProductTable, WorkflowStrip } from "@/components";
 import { StayProductShowcase } from "../home/components";
 import { PageHero } from "../site";
 

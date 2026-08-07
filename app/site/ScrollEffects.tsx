@@ -1,13 +1,16 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 export const ScrollEffects = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const revealTargets = Array.from(
-      document.querySelectorAll<HTMLElement>(".reveal-section, .section-pad")
+      document.querySelectorAll<HTMLElement>(".reveal-section, .section-pad, .art-showcase")
     );
 
     root.classList.add("motion-ready");
@@ -31,11 +34,18 @@ export const ScrollEffects = () => {
             }
           });
         },
-        // Lower threshold (0.04) = trigger when just 4% is visible — better for tall sections
-        // Smaller negative margin = reveal slightly earlier for a more natural feel
-        { rootMargin: "0px 0px -5%", threshold: 0.04 }
+        { rootMargin: "150px 0px 0px", threshold: 0.01 }
       );
-      revealTargets.forEach((target) => observer?.observe(target));
+
+      revealTargets.forEach((target) => {
+        const rect = target.getBoundingClientRect();
+        // Instantly reveal sections that are currently inside or near the initial viewport
+        if (rect.top < window.innerHeight * 1.25) {
+          target.setAttribute("data-visible", "true");
+        } else {
+          observer?.observe(target);
+        }
+      });
     }
 
     updateProgress();
@@ -46,10 +56,8 @@ export const ScrollEffects = () => {
       observer?.disconnect();
       window.removeEventListener("scroll", updateProgress);
       window.removeEventListener("resize", updateProgress);
-      root.classList.remove("motion-ready");
-      root.style.removeProperty("--site-scroll-progress");
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="site-scroll-progress" aria-hidden="true">

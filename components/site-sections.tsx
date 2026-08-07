@@ -1,9 +1,9 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { Fragment } from "react";
-import { benefits, offers, products, qa, stayFeatures, trustSignals } from "./data";
-import { StayFeatureVisual } from "./home/components/StayFeatureVisual";
-import { PricingPlans } from "./pricing/components";
+import { benefits, offers, products, qa, stayFeatures, trustSignals } from "@/app/data";
+import { StayFeatureVisual } from "@/app/home/components/StayFeatureVisual";
+import { PricingPlans } from "@/app/pricing/components";
 
 export function HeroScene() {
   return (
@@ -291,4 +291,3 @@ export const CtaBand = () => {
     </section>
   );
 };
-

@@ -14,7 +14,7 @@ const namiBrandFont = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://namios.com"),
+  metadataBase: new URL("https://namios.io"),
   title: {
     default: "NamiOS | Modern hotel operating platform",
     template: "%s | NamiOS"
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "NamiOS | Every part of your property, moving together",
     description:
       "Run stays, dining, guest records, deposits, invoices, OTA import, and compliance from one elegant Hotel OS.",
-    url: "https://namios.com",
+    url: "https://namios.io",
     siteName: "NamiOS",
     images: [{ url: "/brand/nami-logo.svg", width: 485, height: 474 }],
     locale: "en_US",

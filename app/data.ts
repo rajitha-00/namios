@@ -17,12 +17,12 @@ export const products = [
 ];
 
 export const benefits = [
-  ["Check in faster", "Guest profiles keep passport or NIC details, folios, payments, notes, and room history searchable before the guest reaches the desk."],
-  ["Protect room revenue", "Deposit locks, direct booking flows, and payment follow-ups reduce unpaid holds, fake bookings, and avoidable OTA dependence."],
-  ["Close compliance gaps", "Tourist Police exports and property-ready guest records reduce repetitive nightly admin work for Sri Lankan hotels and villas."],
-  ["Move teams together", "Housekeeping, front desk, kitchen, and management see the same operational truth instead of scattered notes and WhatsApp threads."],
-  ["Invoice cleanly", "Service charge, SSCL, VAT, branded PDFs, and WhatsApp-friendly invoices fit real local billing workflows."],
-  ["Grow in modules", "Start with Nami Stay, add Nami Dine, then connect direct booking, payments, and Control as the property matures."]
+  ["Check in faster", "Guest profiles keep passport or NIC details, folios, payments, notes, and room history searchable with automated OCR scanning."],
+  ["Protect room revenue", "0% commission direct booking flows, payment locks, and hybrid WhatsApp deposit requests eliminate unpaid holds and fake bookings."],
+  ["Close compliance gaps", "Real-time automatic sync to the Sri Lanka Tourist Police registry Google Sheet eliminates repetitive nightly admin work."],
+  ["Move teams together", "Role-Based Access Control (RBAC) gives owners, receptionists, housekeepers, and kitchen staff tailored operational views."],
+  ["Invoice cleanly", "Service charge (10%), SSCL (2.5%), VAT (18%), branded PDFs, and WhatsApp invoices fit real local billing and tax compliance workflows."],
+  ["Grow in modules", "Start with Nami Stay, lease tablet/printer hardware, activate Nami Dine, and launch multi-channel AI promotions as your property matures."]
 ];
 
 export const plans = [
@@ -37,7 +37,7 @@ export const plans = [
     price: "LKR 9,999",
     note: "per property / month",
     featured: true,
-    features: ["Complete Nami Stay", "OTA and compliance workflows", "Direct bookings and deposits", "Advanced reporting"]
+    features: ["Complete Nami Stay", "OTA and compliance workflows", "Direct bookings and deposits", "Advanced reporting", "1 month free trial"]
   },
   {
     name: "Standard + AI",
@@ -49,7 +49,7 @@ export const plans = [
     name: "Pro",
     price: "LKR 29,999",
     note: "per property / month",
-    features: ["Stay + AI + Dine + Pay + People", "HR, attendance, and payroll", "Priority onboarding", "Brand and social launch with Pro Annual"]
+    features: ["Stay + AI + Dine + Pay + People", "HR, attendance, and payroll", "Priority onboarding", "Brand and social launch with Pro Annual", "1 month free trial"]
   }
 ];
 
@@ -70,9 +70,12 @@ export const stayFeatures = [
   ["Booking cockpit", "Calendar, OTA imports, guest notes, deposits, room allocation, and status changes in one workspace."],
   ["Guest memory", "Returning guests, passport or NIC records, preferences, payments, folios, and invoice history stay connected."],
   ["Housekeeping live board", "Room status, assigned tasks, cleaning progress, maintenance notes, and front-desk readiness without chasing."],
-  ["Deposit automation", "Advance payment rules, reminders, receipt checks, and booking confirmation flows reduce unpaid holds."],
-  ["Compliance exports", "Tourist Police-ready guest data and monthly exports keep admin work structured and auditable."],
-  ["Branded finance", "VAT, SSCL, service charge, folio PDFs, and WhatsApp-ready invoices make the property look professional."]
+  ["Deposit automation", "Advance payment rules, hybrid WhatsApp dispatch templates, receipt checks, and booking confirmation flows."],
+  ["Compliance exports", "Real-time sync to the Sri Lanka Tourist Police registry sheets keeps compliance structured and hands-free."],
+  ["Branded finance", "VAT, SSCL, service charge, folio PDFs, and WhatsApp-ready invoices make the property look professional."],
+  ["Role-based controls", "Tailored dashboards and permissions (RBAC) for owners, GMs, front desk, housekeeping, and kitchen captains."],
+  ["AI campaigns engine", "Target past guests with automated promotions via Email, SMS, and WhatsApp broadcasts using your guest database."],
+  ["Hardware lease packages", "Access front-desk Android tablets, thermal receipt printers, and LankaQR display stands (monitors/desktops excluded)."]
 ];
 
 export const trustSignals = ["Boutique hotels", "Villas", "Guesthouses", "Resorts", "Restaurants", "Sri Lanka ready"];

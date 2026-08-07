@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BenefitsGrid, CtaBand, FeatureMosaic, PricingCards, ProductGrid, QaList, StaySpotlight, TrustMarquee } from "./components";
+import { BenefitsGrid, CtaBand, FeatureMosaic, PricingCards, ProductGrid, QaList, StaySpotlight, TrustMarquee } from "@/components";
 import { AudienceRail, BeforeAfterExperience, IntegrationLandscape, OperatingJourney, PropertyHeroMedia } from "./home/components";
 
 export const metadata: Metadata = {

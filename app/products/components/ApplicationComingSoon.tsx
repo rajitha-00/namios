@@ -18,7 +18,7 @@ export const ApplicationComingSoon = ({ application }: ApplicationComingSoonProp
             <div className="coming-soon-actions">
               <a
                 className="button"
-                href={`mailto:hellonamios@outlook.com?subject=${encodeURIComponent(`Early access: ${application.name}`)}`}
+                href={`mailto:hello@namios.io?subject=${encodeURIComponent(`Early access: ${application.name}`)}`}
               >
                 Request early access
               </a>
