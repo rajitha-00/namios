@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import { useState } from "react";
 import { stayScenes } from "../constants";
 import type { StaySceneKey } from "../interfaces";
@@ -50,6 +51,10 @@ export const StayProductShowcase = () => {
                 </button>
               ))}
             </div>
+            <span className="art-module-swipe-hint">
+              Swipe to explore modules
+              <ArrowRight aria-hidden="true" />
+            </span>
           </aside>
           <div className="art-module-content">
             <div className="art-scene-copy" aria-live="polite">

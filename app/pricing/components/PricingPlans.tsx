@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { comparisonGroups, pricingPlans } from "../constants";
-import type { BillingCycle, FeatureValue, PricingPlan } from "../interfaces";
+import type { BillingCycle, FeatureValue, PlanId, PricingPlan } from "../interfaces";
 
 const formatLkr = (amount: number) => `LKR ${amount.toLocaleString("en-LK")}`;
 
@@ -41,8 +41,8 @@ const PlanShowcase = ({ billingCycle, plan }: { billingCycle: BillingCycle; plan
   );
 };
 
-const ComparisonPlanHeader = ({ plan }: { plan: PricingPlan }) => (
-  <div className={`comparison-plan-heading comparison-plan-heading-compact ${plan.featured ? "is-featured" : ""}`}>
+const ComparisonPlanHeader = ({ activePlan, plan }: { activePlan: PlanId; plan: PricingPlan }) => (
+  <div className={`comparison-plan-heading comparison-plan-heading-compact ${plan.featured ? "is-featured" : ""} ${plan.id === activePlan ? "is-mobile-active" : ""}`}>
     <div className="comparison-plan-label">
       <strong>{plan.name}</strong>
       {plan.badge && <span>{plan.badge}</span>}
@@ -52,6 +52,7 @@ const ComparisonPlanHeader = ({ plan }: { plan: PricingPlan }) => (
 
 export const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
+  const [activeComparisonPlan, setActiveComparisonPlan] = useState<PlanId>("standard");
 
   return (
     <div className="saas-pricing comparison-pricing">
@@ -76,13 +77,30 @@ export const PricingPlans = () => {
         <p>No hidden modules or unclear feature limits. Compare every plan in one table.</p>
       </div>
 
-      <div className="comparison-scroll" role="region" aria-label="NamiOS plan feature comparison" tabIndex={0}>
+      <div className="mobile-comparison-tabs" role="tablist" aria-label="Select a plan to compare">
+        {pricingPlans.map((plan) => (
+          <button
+            className={plan.id === activeComparisonPlan ? "active" : ""}
+            type="button"
+            role="tab"
+            aria-selected={plan.id === activeComparisonPlan}
+            aria-controls="mobile-plan-comparison"
+            key={plan.id}
+            onClick={() => setActiveComparisonPlan(plan.id)}
+          >
+            <span>{plan.name}</span>
+            {plan.badge && <small>{plan.badge}</small>}
+          </button>
+        ))}
+      </div>
+
+      <div className="comparison-scroll" id="mobile-plan-comparison" role="region" aria-label="NamiOS plan feature comparison" tabIndex={0}>
         <div className="comparison-table">
           <div className="comparison-corner">
             <strong>Plan features</strong>
-            <small>Scroll sideways on smaller screens</small>
+            <small>Select a plan above on smaller screens</small>
           </div>
-          {pricingPlans.map((plan) => <ComparisonPlanHeader key={plan.id} plan={plan} />)}
+          {pricingPlans.map((plan) => <ComparisonPlanHeader activePlan={activeComparisonPlan} key={plan.id} plan={plan} />)}
 
           {comparisonGroups.filter((group) => billingCycle === "annual" || group.name !== "Annual plan benefits").map((group) => (
             <div className="comparison-group" key={group.name}>
@@ -91,7 +109,7 @@ export const PricingPlans = () => {
                 <div className="comparison-feature-row" key={feature.name}>
                   <div className="comparison-feature-name">{feature.name}</div>
                   {pricingPlans.map((plan) => (
-                    <div className={`comparison-feature-value ${plan.featured ? "is-featured" : ""}`} key={plan.id}>
+                    <div className={`comparison-feature-value ${plan.featured ? "is-featured" : ""} ${plan.id === activeComparisonPlan ? "is-mobile-active" : ""}`} key={plan.id}>
                       <FeatureStatus value={feature.values[plan.id]} />
                     </div>
                   ))}

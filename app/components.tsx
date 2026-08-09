@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { Fragment } from "react";
 import { benefits, offers, products, qa, stayFeatures, trustSignals } from "./data";
 import { StayFeatureVisual } from "./home/components/StayFeatureVisual";
 import { PricingPlans } from "./pricing/components";
@@ -207,16 +206,18 @@ export function WorkflowStrip() {
 
 export function ProductTable() {
   return (
-    <div className="product-table">
-      <div><strong>Product</strong></div>
-      <div><strong>What it runs</strong></div>
-      <div><strong>Why it matters</strong></div>
+    <div className="product-table" role="table" aria-label="NamiOS product comparison">
+      <div className="product-table-head" role="row">
+        <div role="columnheader"><strong>Product</strong></div>
+        <div role="columnheader"><strong>What it runs</strong></div>
+        <div role="columnheader"><strong>Why it matters</strong></div>
+      </div>
       {products.map((product) => (
-        <Fragment key={product.name}>
-          <div key={`${product.name}-name`}><strong>{product.name}</strong></div>
-          <div key={`${product.name}-summary`}>{product.summary}</div>
-          <div key={`${product.name}-proof`}>{product.proof}</div>
-        </Fragment>
+        <article className="product-table-row" role="row" key={product.name}>
+          <div role="cell" data-label="Product"><strong>{product.name}</strong></div>
+          <div role="cell" data-label="What it runs">{product.summary}</div>
+          <div role="cell" data-label="Why it matters">{product.proof}</div>
+        </article>
       ))}
     </div>
   );

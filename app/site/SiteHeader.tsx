@@ -3,9 +3,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import {
+  BadgeDollarSign,
+  Boxes,
+  Building2,
+  CalendarCheck,
+  ChevronDown,
+  ChevronRight,
+  CircleHelp,
+  Menu,
+  MessageCircle,
+  Sparkles,
+  Tag,
+  X
+} from "lucide-react";
 import { ProductMegaMenu } from "./components";
 import { primaryNavigationItems, productNavigationItems } from "./constants";
+
+const primaryNavigationIcons = {
+  "/pricing": BadgeDollarSign,
+  "/benefits": Sparkles,
+  "/offers": Tag,
+  "/qa": CircleHelp,
+  "/about": Building2
+} as const;
 
 export const SiteHeader = () => {
   const pathname = usePathname();
@@ -24,6 +46,7 @@ export const SiteHeader = () => {
   }, []);
 
   const openProductMenu = useCallback(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 820px)").matches) return;
     if (closeDropdownTimeout.current) {
       clearTimeout(closeDropdownTimeout.current);
       closeDropdownTimeout.current = null;
@@ -32,6 +55,7 @@ export const SiteHeader = () => {
   }, []);
 
   const scheduleCloseProductMenu = useCallback(() => {
+    if (typeof window !== "undefined" && window.matchMedia("(max-width: 820px)").matches) return;
     closeDropdownTimeout.current = setTimeout(() => {
       setProductMenuOpen(false);
     }, 90);
@@ -39,12 +63,6 @@ export const SiteHeader = () => {
 
   const isActiveRoute = (href: string) =>
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
-
-  // Determine if current route has a dark photographic hero section at the top
-  const isDarkHeroPage =
-    ["/", "/products", "/pricing", "/benefits", "/qa", "/about", "/contact", "/offers"].includes(
-      pathname
-    ) || pathname.startsWith("/products/");
 
   useEffect(() => {
     const onScroll = () => {
@@ -72,6 +90,17 @@ export const SiteHeader = () => {
     };
   }, [closeMenus]);
 
+  useEffect(() => {
+    if (!menuOpen) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [menuOpen]);
+
   return (
     <header
       className="topbar platform-topbar"
@@ -91,17 +120,19 @@ export const SiteHeader = () => {
         <button
           className="menu-toggle"
           type="button"
+          data-open={menuOpen}
           aria-expanded={menuOpen}
           aria-controls="site-navigation"
           aria-label={menuOpen ? "Close navigation" : "Open navigation"}
           onClick={() => setMenuOpen((open) => !open)}
         >
-          <i />
-          <i />
+          <Menu className="menu-toggle-icon menu-toggle-open" aria-hidden="true" />
+          <X className="menu-toggle-icon menu-toggle-close" aria-hidden="true" />
         </button>
 
         <div id="site-navigation" className="nav-panel" data-open={menuOpen}>
           <div className="navlinks platform-navlinks">
+            <span className="mobile-nav-section-label">Platform</span>
             {/* Product dropdown with hover-bridge delay */}
             <div
               className="product-nav-switcher"
@@ -118,14 +149,17 @@ export const SiteHeader = () => {
                 type="button"
                 aria-expanded={productMenuOpen}
                 aria-controls="product-mega-menu"
-                onClick={() => {
-                  const isMobile = window.matchMedia("(max-width: 820px)").matches;
-                  setProductMenuOpen((open) => (isMobile ? !open : true));
-                }}
+                onClick={() => setProductMenuOpen((open) => !open)}
               >
-                Products
+                <span className="mobile-nav-label">
+                  <span className="mobile-nav-icon-wrap">
+                    <Boxes className="mobile-nav-icon" aria-hidden="true" />
+                  </span>
+                  <span>Products</span>
+                </span>
                 {/* Clean indicator dot — no rotation */}
                 <span className="nav-trigger-dot" aria-hidden="true" />
+                <ChevronDown className="mobile-nav-chevron product-chevron" aria-hidden="true" />
               </button>
               {/* The positioner also listens for hover to prevent closing when cursor moves into the panel */}
               <div
@@ -143,21 +177,48 @@ export const SiteHeader = () => {
               </div>
             </div>
 
-            {primaryNavigationItems.map(([label, href]) => (
-              <Link
-                className={isActiveRoute(href) ? "active" : ""}
-                href={href}
-                key={href}
-                aria-current={isActiveRoute(href) ? "page" : undefined}
-                onClick={closeMenus}
-              >
-                {label}
-              </Link>
-            ))}
+            {primaryNavigationItems.map(([label, href], index) => {
+              const NavigationIcon = primaryNavigationIcons[href];
+
+              return (
+                <Fragment key={href}>
+                  {index === 3 ? (
+                    <span className="mobile-nav-section-label">Company</span>
+                  ) : null}
+                  <Link
+                    className={isActiveRoute(href) ? "active" : ""}
+                    href={href}
+                    aria-current={isActiveRoute(href) ? "page" : undefined}
+                    onClick={closeMenus}
+                  >
+                    <span className="mobile-nav-label">
+                      <span className="mobile-nav-icon-wrap">
+                        <NavigationIcon className="mobile-nav-icon" aria-hidden="true" />
+                      </span>
+                      <span>{label}</span>
+                    </span>
+                    <ChevronRight className="mobile-nav-chevron" aria-hidden="true" />
+                  </Link>
+                </Fragment>
+              );
+            })}
           </div>
           <div className="actions">
-            <Link className="nav-proof" href="/contact" onClick={closeMenus}>Contact</Link>
-            <Link className="button nav-cta" href="/offers" onClick={closeMenus}>Book a demo</Link>
+            <span className="mobile-nav-section-label">Resources</span>
+            <Link className="nav-proof" href="/contact" onClick={closeMenus}>
+              <span className="mobile-nav-label">
+                <span className="mobile-nav-icon-wrap">
+                  <MessageCircle className="mobile-nav-icon" aria-hidden="true" />
+                </span>
+                <span>Contact</span>
+              </span>
+              <ChevronRight className="mobile-nav-chevron" aria-hidden="true" />
+            </Link>
+            <Link className="button nav-cta" href="/offers" onClick={closeMenus}>
+              <CalendarCheck className="mobile-action-icon" aria-hidden="true" />
+              <span>Book a demo</span>
+              <ChevronRight className="mobile-action-arrow" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </nav>

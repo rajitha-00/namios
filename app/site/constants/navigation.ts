@@ -61,6 +61,7 @@ export const productNavigationItems: ProductNavigationItem[] = [
 export const primaryNavigationItems = [
   ["Pricing", "/pricing"],
   ["Benefits", "/benefits"],
+  ["Offers", "/offers"],
   ["Q&A", "/qa"],
   ["About", "/about"]
 ] as const;

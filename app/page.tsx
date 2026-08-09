@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BenefitsGrid, CtaBand, FeatureMosaic, PricingCards, ProductGrid, QaList, StaySpotlight, TrustMarquee } from "@/components";
+import { BenefitsGrid, CtaBand, FeatureMosaic, OffersGrid, PricingCards, ProductGrid, QaList, StaySpotlight, TrustMarquee } from "@/components";
 import { AudienceRail, BeforeAfterExperience, IntegrationLandscape, OperatingJourney, PropertyHeroMedia } from "./home/components";
 
 export const metadata: Metadata = {
@@ -187,6 +187,18 @@ export default function HomePage() {
             </div>
           </div>
           <PricingCards />
+        </div>
+      </section>
+      <section className="section-pad">
+        <div className="container">
+          <div className="section-head">
+            <div>
+              <span className="eyebrow">Launch offers</span>
+              <h2>Exclusive setup &amp; onboarding bonuses.</h2>
+            </div>
+            <p>Every plan starts with a 30-day free trial. Unlock free booking website, onsite visits, and brand packages on annual plans.</p>
+          </div>
+          <OffersGrid />
         </div>
       </section>
       <section className="section-pad">

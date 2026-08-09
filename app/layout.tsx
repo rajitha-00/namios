@@ -216,6 +216,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
                 <Link href="/products">Products</Link>
                 <Link href="/pricing">Pricing</Link>
                 <Link href="/benefits">Benefits</Link>
+                <Link href="/offers">Offers</Link>
               </div>
               <div>
                 <strong>Company</strong>
