@@ -30,7 +30,7 @@ const ContactPage = () => (
           <h2>Talk to a person who understands the operating day.</h2>
           <a className="hotline-number" href="tel:+94707140146">+94 70 714 0146</a>
           <p>For demos, pricing, migrations, annual-plan websites, partnerships, and active-customer support.</p>
-          <div className="hotline-actions"><a href="https://wa.me/94707140146?text=Hello%20NamiOS%2C%20I%27d%20like%20to%20discuss%20my%20property." target="_blank" rel="noreferrer"><b>WA</b><span><strong>WhatsApp us</strong><small>Fastest for a first message</small></span></a><a href="mailto:hellonamios@outlook.com?subject=NamiOS%20enquiry"><b>@</b><span><strong>hellonamios@outlook.com</strong><small>Product, support, and partnerships</small></span></a></div>
+          <div className="hotline-actions"><a href="https://wa.me/94707140146?text=Hello%20NamiOS%2C%20I%27d%20like%20to%20discuss%20my%20property." target="_blank" rel="noreferrer"><b>WA</b><span><strong>WhatsApp us</strong><small>Fastest for a first message</small></span></a><a href="mailto:hello@namios.io?subject=NamiOS%20enquiry"><b>@</b><span><strong>hello@namios.io</strong><small>Product, support, and partnerships</small></span></a></div>
           <div className="response-promise"><div><strong>&lt; 1 day</strong><span>Typical business response</span></div><div><strong>08:30–17:30</strong><span>Monday–Friday · Sri Lanka</span></div><div><strong>Colombo</strong><span>Local product team</span></div></div>
         </div>
         <ContactForm />
@@ -57,7 +57,7 @@ const ContactPage = () => (
     </section>
 
     <section className="contact-final">
-      <div className="container"><p>Already using NamiOS?</p><h2>Include your property name and account email for faster support.</h2><div className="contact-final-actions"><Link className="button light" href="mailto:hellonamios@outlook.com?subject=NamiOS%20customer%20support">Email customer support</Link><Link className="button secondary" href="/qa">Browse common questions</Link></div></div>
+      <div className="container"><p>Already using NamiOS?</p><h2>Include your property name and account email for faster support.</h2><div className="contact-final-actions"><Link className="button light" href="mailto:hello@namios.io?subject=NamiOS%20customer%20support">Email customer support</Link><Link className="button secondary" href="/qa">Browse common questions</Link></div></div>
     </section>
   </main>
 );

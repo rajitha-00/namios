@@ -141,7 +141,7 @@ const globalSchema = {
         "@type": "ContactPoint",
         telephone: "+94-70-714-0146",
         contactType: "customer service",
-        email: "hellonamios@outlook.com",
+        email: "hello@namios.io",
         availableLanguage: ["English", "Sinhala", "Tamil"],
         areaServed: "LK"
       },
@@ -192,7 +192,7 @@ const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        <link rel="me" href="mailto:hellonamios@outlook.com" />
+        <link rel="me" href="mailto:hello@namios.io" />
       </head>
       <body className={`${namiBrandFont.className} ${namiBrandFont.variable}`}>
         <script

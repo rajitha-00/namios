@@ -6,7 +6,7 @@ TEAM
 ---
 Product: NamiOS by DesignNetrix
 Website: https://www.designnetrix.com/
-Contact: hellonamios@outlook.com
+Contact: hello@namios.io
 Location: Colombo, Sri Lanka
 
 ---
