@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hotel Management Software Sri Lanka — NamiOS",
     description:
-      "Sri Lanka's leading Hotel OS. PMS, POS, Tourist Police sync, direct bookings, and trilingual UI for independent hotels, villas & resorts. From LKR 6,999/month.",
+      "Sri Lanka's leading NamiOS. PMS, POS, Tourist Police sync, direct bookings, and trilingual UI for independent hotels, villas & resorts. From LKR 6,999/month.",
     url: "https://namios.io",
     images: [{ url: "/og/og-home.png", width: 1200, height: 630, alt: "NamiOS Hotel Management Software Sri Lanka" }]
   },
   twitter: {
     card: "summary_large_image",
     title: "Hotel Management Software Sri Lanka — NamiOS",
-    description: "PMS, POS, Tourist Police sync, and trilingual hotel OS for Sri Lanka. Start free for 1 month.",
+    description: "PMS, POS, Tourist Police sync, and trilingual NamiOS for Sri Lanka. Start free for 1 month.",
     images: ["/og/og-home.png"]
   }
 };
@@ -108,10 +108,10 @@ export default function HomePage() {
         <PropertyHeroMedia />
         <div className="container property-hero-layout">
           <div className="hero-copy">
-            <span className="eyebrow">Formerly Hotel OS, now NamiOS</span>
+            <span className="eyebrow">Formerly NamiOS, now NamiOS</span>
             <h1>Every stay.<br />Moving as one.</h1>
             <p className="lead">
-              The modern Hotel OS for Sri Lankan hotels, villas, guesthouses, and resorts. Run bookings, rooms, guests, housekeeping, deposits, invoices, OTA imports, and compliance from one calm workspace.
+              The modern NamiOS for Sri Lankan hotels, villas, guesthouses, and resorts. Run bookings, rooms, guests, housekeeping, deposits, invoices, OTA imports, and compliance from one calm workspace.
             </p>
             <div className="hero-actions">
               <Link className="button" href="/offers">

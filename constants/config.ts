@@ -1,6 +1,6 @@
 export const APP_CONFIG = {
   name: "NamiOS",
-  tagline: "The modern Hotel OS for Sri Lankan properties",
+  tagline: "The modern NamiOS for Sri Lankan properties",
   routes: {
     home: "/",
     benefits: "/benefits",

@@ -1,6 +1,6 @@
 # NamiOS
 
-> NamiOS is a modern hotel operating system (Hotel OS) designed specifically for independent hotels, boutique villas, guesthouses, resorts, and restaurants in Sri Lanka.
+> NamiOS is a modern hotel operating system (NamiOS) designed specifically for independent hotels, boutique villas, guesthouses, resorts, and restaurants in Sri Lanka.
 
 NamiOS is built and powered by DesignNetrix, a Sri Lankan technology company.
 

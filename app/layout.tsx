@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
   title: {
     default: "NamiOS | Hotel Management Software Sri Lanka — PMS, POS & Direct Bookings",
-    template: "%s | NamiOS — Hotel OS Sri Lanka"
+    template: "%s | NamiOS — NamiOS Sri Lanka"
   },
 
   description:
@@ -77,7 +77,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NamiOS | Hotel Management Software Sri Lanka",
     description:
-      "Sri Lanka's modern Hotel OS — PMS, POS, direct bookings, Tourist Police compliance, trilingual UI, and deposit locks for independent hotels, villas and resorts. From LKR 6,999/month.",
+      "Sri Lanka's modern NamiOS — PMS, POS, direct bookings, Tourist Police compliance, trilingual UI, and deposit locks for independent hotels, villas and resorts. From LKR 6,999/month.",
     url: "https://namios.io",
     siteName: "NamiOS",
     images: [
