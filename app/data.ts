@@ -30,26 +30,53 @@ export const plans = [
     name: "Launch",
     price: "LKR 6,999",
     note: "per property / month",
-    features: ["Core Nami Stay", "Bookings, rooms, and guests", "Basic housekeeping", "1 month free trial"]
+    features: [
+      "Core Nami Stay",
+      "Front-desk POS & walk-ins",
+      "Basic iCal export (No OTA sync)",
+      "Bookings, rooms, and guests",
+      "Basic housekeeping",
+      "1 month free trial"
+    ]
   },
   {
     name: "Standard",
-    price: "LKR 9,999",
+    price: "LKR 19,999",
     note: "per property / month",
     featured: true,
-    features: ["Complete Nami Stay", "OTA and compliance workflows", "Direct bookings and deposits", "Advanced reporting", "1 month free trial"]
+    features: [
+      "Complete Nami Stay",
+      "Includes 2-Way OTA Channel Sync",
+      "OTA and compliance workflows",
+      "Direct bookings and deposits",
+      "Advanced reporting",
+      "1 month free trial"
+    ]
   },
   {
     name: "Standard + AI",
-    price: "LKR 17,999",
+    price: "LKR 28,999",
     note: "per property / month",
-    features: ["Everything in Standard", "AI operating assistant", "AI forecasts and suggestions", "1 month free trial"]
+    features: [
+      "Everything in Standard",
+      "Includes 2-Way OTA Sync + AI",
+      "AI operating assistant",
+      "AI forecasts and suggestions",
+      "1 month free trial"
+    ]
   },
   {
     name: "Pro",
-    price: "LKR 29,999",
+    price: "LKR 39,999",
     note: "per property / month",
-    features: ["Stay + AI + Dine + Pay + People", "HR, attendance, and payroll", "Priority onboarding", "Brand and social launch with Pro Annual", "1 month free trial"]
+    features: [
+      "Full Suite + Multi-Channel OTA Sync",
+      "Stay + AI + Dine + Pay + People",
+      "HR, attendance, and payroll",
+      "Priority onboarding",
+      "Brand and social launch with Pro Annual",
+      "1 month free trial"
+    ]
   }
 ];
 

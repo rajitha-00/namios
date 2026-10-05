@@ -10,11 +10,12 @@ export const metadata: Metadata = {
 
 const pricingFaq = [
   ["Do you charge commission on direct bookings?", "No. NamiOS uses a clear subscription model. Revenue from your direct booking flow remains your property revenue; payment gateway charges may still apply."],
-  ["Can a villa start with the Launch plan?", "Yes. Launch includes the core bookings, rooms, guests, housekeeping, folios, and invoices needed to move a small property online."],
+  ["Can a villa start with the Launch plan?", "Yes. Launch includes the core bookings, front-desk POS, walk-ins, rooms, guests, housekeeping, folios, invoices, and basic iCal export needed to move a small property online (2-way OTA channel sync begins on the Standard plan)."],
   ["What is included in the one-month free trial?", "Your selected NamiOS applications are configured for a working trial. We use the month to validate your workflows before paid billing begins."],
   ["How does annual billing work?", "Annual plans are billed for 12 months upfront with a 10% discount. They also include a custom website connected to NamiOS for commission-free direct bookings."],
   ["What does Pro Annual include at launch?", "In addition to the annual discount and direct-booking website, Pro Annual includes a brand launch and social media starter package. The agreed deliverables and channels are confirmed during onboarding."],
-  ["Which plans include AI?", "Standard + AI includes the Nami AI operating assistant for LKR 17,999 per month. Pro includes AI together with Dine, Pay, People, HR, and payroll for LKR 29,999 per month."]
+  ["Which plans include AI?", "Standard + AI includes the Nami AI operating assistant for LKR 28,999 per month. Pro includes AI together with Dine, Pay, People, HR, and payroll for LKR 39,999 per month."],
+  ["Which plans include 2-Way OTA Channel Sync?", "Standard (LKR 19,999/mo) and Standard + AI (LKR 28,999/mo) include 2-way OTA channel sync with platforms like Booking.com and Agoda. Pro (LKR 39,999/mo) provides multi-channel sync across the entire property suite. Launch is intended for front-desk POS & walk-ins only with basic iCal export."]
 ];
 
 const PricingPage = () => {

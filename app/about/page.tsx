@@ -67,7 +67,7 @@ const AboutPage = () => {
       opens: "08:30",
       closes: "17:30"
     },
-    priceRange: "LKR 6,999–29,999/month",
+    priceRange: "LKR 6,999–39,999/month",
     parentOrganization: {
       "@type": "Organization",
       name: "DesignNetrix",

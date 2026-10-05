@@ -76,14 +76,14 @@ export default function HomePage() {
         offers: {
           "@type": "AggregateOffer",
           lowPrice: "6999",
-          highPrice: "29999",
+          highPrice: "39999",
           priceCurrency: "LKR",
           offerCount: 4,
           offers: [
             { "@type": "Offer", name: "Launch", price: "6999", priceCurrency: "LKR" },
-            { "@type": "Offer", name: "Standard", price: "9900", priceCurrency: "LKR" },
-            { "@type": "Offer", name: "Standard + AI", price: "17999", priceCurrency: "LKR" },
-            { "@type": "Offer", name: "Pro", price: "29999", priceCurrency: "LKR" }
+            { "@type": "Offer", name: "Standard", price: "19999", priceCurrency: "LKR" },
+            { "@type": "Offer", name: "Standard + AI", price: "28999", priceCurrency: "LKR" },
+            { "@type": "Offer", name: "Pro", price: "39999", priceCurrency: "LKR" }
           ]
         },
         provider: { "@id": "https://namios.io/#organization" },

@@ -47,12 +47,12 @@ NamiOS is a cloud-based hospitality management platform that replaces fragmented
 
 ## Pricing Plans
 
-| Plan | Price (LKR/month) | Key Inclusions |
-|------|------------------|----------------|
-| Launch | 6,999 | Core PMS — bookings, rooms, guests, housekeeping, invoicing |
-| Standard | 9,900 | Launch + deposit locks, OTA imports, compliance exports |
-| Standard + AI | 17,999 | Standard + Nami AI operating assistant |
-| Pro | 29,999 | All products — Stay, Dine, Pay, People, HR, payroll |
+| Plan | Price (LKR/month) | Key Inclusions | Channel Sync Status |
+|------|------------------|----------------|---------------------|
+| Launch | 6,999 | Core PMS — bookings, rooms, guests, housekeeping, invoicing | No OTA Sync (Front-desk POS & Walk-ins only, basic iCal export) |
+| Standard | 19,999 | Complete Stay OS, deposit locks, compliance exports | Includes 2-Way Sync (Covers Beds24 + 10k margin) |
+| Standard + AI | 28,999 | Standard + Nami AI operating assistant | Includes 2-Way Sync + AI |
+| Pro | 39,999 | All products — Stay, Dine, Pay, People, HR, payroll | Full Suite + Multi-Channel OTA Sync |
 
 All plans include a 1-month free trial. Annual billing gets 10% off + free direct-booking website.
 
@@ -62,7 +62,7 @@ All plans include a 1-month free trial. Annual billing gets 10% off + free direc
 Yes. A small property can begin with the Launch plan and add capabilities as the business grows. NamiOS is designed specifically for independent hospitality, not enterprise hotels.
 
 **Does NamiOS integrate with Booking.com and Agoda?**
-NamiOS includes OTA import workflows so reservations from Booking.com and Agoda appear in the same operational view as direct bookings.
+NamiOS includes 2-way OTA channel synchronization starting on the Standard plan, keeping inventory and reservations from Booking.com, Agoda, and other channels aligned with direct bookings.
 
 **What is Tourist Police sync in NamiOS?**
 Sri Lankan hotels are required to submit guest check-in information to the Tourist Police. NamiOS automatically streams this guest data into a designated Google Sheets spreadsheet, eliminating manual nightly reporting.
@@ -71,7 +71,7 @@ Sri Lankan hotels are required to submit guest check-in information to the Touri
 Yes. NamiOS is one of the very few hotel management systems with a full trilingual interface in Sinhala, Tamil, and English — designed for Sri Lankan front desk and housekeeping staff.
 
 **How much does NamiOS cost in LKR?**
-Plans start at LKR 6,999/month for the Launch plan. The most popular Standard plan is LKR 9,900/month. All plans include a 1-month free trial with no upfront payment.
+Plans start at LKR 6,999/month for the Launch plan. The Standard plan with 2-way OTA sync is LKR 19,999/month, Standard + AI is LKR 28,999/month, and the full Pro suite is LKR 39,999/month. All plans include a 1-month free trial with no upfront payment.
 
 ## Contact
 
