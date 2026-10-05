@@ -59,7 +59,7 @@ export const comparisonGroups: ComparisonGroup[] = [
     name: "AI, people, and support",
     features: [
       { name: "Nami AI operating assistant", values: { launch: false, standard: false, ai: true, pro: true } },
-      { name: "AI guest promotion campaigns", values: { launch: false, standard: false, ai: true, pro: true } },
+      { name: "Guest promotion campaigns", values: { launch: true, standard: true, ai: true, pro: true } },
       { name: "AI summaries, forecasts, and suggestions", values: { launch: false, standard: false, ai: true, pro: true } },
       { name: "Nami People HR and attendance", values: { launch: false, standard: false, ai: false, pro: true } },
       { name: "Payroll workflows and payslips", values: { launch: false, standard: false, ai: false, pro: true } },
